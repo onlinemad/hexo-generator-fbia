@@ -1,7 +1,7 @@
 {
   "name": "hexo-generator-fbia",
-  "version": "1.1.0",
-  "description": "Feed generator plugin for Hexo",
+  "version": "0.0.1",
+  "description": "Facebook Instant Articles Feed generator plugin for Hexo",
   "main": "index",
   "scripts": {
     "eslint": "eslint .",
@@ -20,7 +20,7 @@
     "atom",
     "generator"
   ],
-  "author": "Tommy Chen <tommy351@gmail.com> (http://zespia.tw)",
+  "author": "Ian Wu <onlinemad@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "nunjucks": "^2.4.1",

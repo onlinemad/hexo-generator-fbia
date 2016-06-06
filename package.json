@@ -15,9 +15,7 @@
   "repository": "hexojs/hexo-generator-fbia",
   "keywords": [
     "hexo",
-    "rss",
-    "fbia",
-    "atom",
+    "facebook",
     "generator"
   ],
   "author": "Ian Wu <onlinemad@gmail.com>",

@@ -24,7 +24,40 @@
       {% endif %}
       </description>
       <content:encoded>
-        <![CDATA[{{ post.content | safe }}]]>
+        <![CDATA[
+          <!doctype html>
+          <html lang="en" prefix="op: http://media.facebook.com/op#">
+            <head>
+              <meta charset="utf-8">
+              <link rel="canonical" href="{{ (url + post.path) | uriencode }}">
+              <meta property="op:markup_version" content="v1.0">
+            </head>
+            <body>
+              <article>
+                <header>
+                  <!-- The title and subtitle shown in your Instant Article -->
+                  <h1>{{ post.title }}</h1>
+                
+                  <!-- The date and time when your article was originally published -->
+                  <time class="op-published" datetime="{{ post.date.toISOString() }}">{{ post.date.toISOString() }}</time>
+
+                  <!-- The date and time when your article was last updated -->
+                  <!-- <time class="op-modified" dateTime="{{ post.updated.toISOString() }}">{{ post.updated.toLocaleDateString() }}</time> -->
+
+                  <address>
+                    <a>{{ config.author }}</a>
+                  </address>
+                </header>
+              
+                {{ post.content | safe }}
+
+                <footer>
+
+                </footer>
+              </article>
+            </body>
+          </html>
+        ]]>
       </content:encoded>
     </item>
     {% endfor %}

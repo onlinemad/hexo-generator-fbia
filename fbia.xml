@@ -37,12 +37,22 @@
                 <header>
                   <!-- The title and subtitle shown in your Instant Article -->
                   <h1>{{ post.title }}</h1>
-                
+                  
+                  <!-- The header image shown inside your article --> 
+                  {% if post.cover %}
+                  <figure>
+                    <img src="{{ post.cover[0] }}" />
+                    <figcaption>{{ post.cover[1] }}</figcaption>
+                  </figure>
+                  {% endif %}
+
                   <!-- The date and time when your article was originally published -->
                   <time class="op-published" datetime="{{ post.date.toISOString() }}">{{ post.date.toISOString() }}</time>
 
                   <!-- The date and time when your article was last updated -->
-                  <!-- <time class="op-modified" dateTime="{{ post.updated.toISOString() }}">{{ post.updated.toLocaleDateString() }}</time> -->
+                  {% if post.updated %}
+                  <time class="op-modified" dateTime="{{ post.updated.toISOString() }}">{{ post.updated.toISOString() }}</time>
+                  {% endif %}
 
                   <address>
                     <a>{{ config.author }}</a>

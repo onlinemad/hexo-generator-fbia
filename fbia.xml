@@ -38,31 +38,48 @@
                   <!-- The title and subtitle shown in your Instant Article -->
                   <h1>{{ post.title }}</h1>
                   
+                  {% if post.fbia.header.img %}
                   <!-- The header image shown inside your article --> 
-                  {% if post.cover %}
                   <figure>
-                    <img src="{{ post.cover[0] }}" />
-                    <figcaption>{{ post.cover[1] }}</figcaption>
+                    <img src="{{ post.fbia.header.img }}" />
+                    <figcaption>{{ post.fbia.header.caption }}</figcaption>
                   </figure>
                   {% endif %}
 
-                  <!-- The date and time when your article was originally published -->
-                  <time class="op-published" datetime="{{ post.date.toISOString() }}">{{ post.date.toISOString() }}</time>
+                  {% if post.fbia.header.subtitle %}
+                  <!-- The subtitle shown in your article -->
+                  <h2>{{ post.fbia.header.subtitle }}</h2>
+                  {% endif %}
 
-                  <!-- The date and time when your article was last updated -->
-                  {% if post.updated %}
-                  <time class="op-modified" dateTime="{{ post.updated.toISOString() }}">{{ post.updated.toISOString() }}</time>
+                  {% if post.fbia.header.kicker %}
+                  <!-- A kicker for your article -->
+                  <h3 class="op-kicker">{{ post.fbia.header.kicker }}</h3>
                   {% endif %}
 
                   <address>
                     <a>{{ config.author }}</a>
                   </address>
+
+                  <!-- The date and time when your article was originally published -->
+                  <time class="op-published" datetime="{{ post.date.toISOString() }}">{{ post.date.toISOString() }}</time>
+
+                  {% if post.updated %}
+                  <!-- The date and time when your article was last updated -->
+                  <time class="op-modified" dateTime="{{ post.updated.toISOString() }}">{{ post.updated.toISOString() }}</time>
+                  {% endif %}
+
                 </header>
               
                 {{ post.content | safe }}
 
                 <footer>
+                  {% if post.fbia.footer.credits %}
+                  <!-- Credits for your article -->
+                  <aside>{{ post.fbia.footer.credits }}</aside>
+                  {% endif %}
 
+                  <!-- Copyright details for your article -->
+                  <small>Copyright {{ config.author }}</small>
                 </footer>
               </article>
             </body>

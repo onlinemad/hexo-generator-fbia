@@ -70,7 +70,7 @@
 
                 </header>
               
-                {{ post.content | safe }}
+                {{ post._content | markdown_it_fbia | safe }}
 
                 <footer>
                   {% if post.fbia.footer.credits %}

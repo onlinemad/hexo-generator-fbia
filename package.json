@@ -21,6 +21,7 @@
   "author": "Ian Wu <onlinemad@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "markdown-it": "^6.0.5",
     "nunjucks": "^2.4.1",
     "object-assign": "^4.0.1"
   },

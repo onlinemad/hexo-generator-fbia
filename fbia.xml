@@ -37,9 +37,9 @@
                 <header>
                   <!-- The title and subtitle shown in your Instant Article -->
                   <h1>{{ post.title }}</h1>
-                  
+
                   {% if post.fbia.header.img %}
-                  <!-- The header image shown inside your article --> 
+                  <!-- The header image shown inside your article -->
                   <figure>
                     <img src="{{ post.fbia.header.img }}" />
                     <figcaption>{{ post.fbia.header.caption }}</figcaption>
@@ -69,13 +69,21 @@
                   {% endif %}
 
                 </header>
-              
+
                 {{ post._content | markdown_it_fbia | safe }}
 
                 <footer>
                   {% if post.fbia.footer.credits %}
                   <!-- Credits for your article -->
                   <aside>{{ post.fbia.footer.credits }}</aside>
+                  {% endif %}
+
+                  {% if post.fbia.footer.related_articles %}
+                  <ul class="op-related-articles">
+                    {% for article in post.fbia.footer.related_articles %}
+                    <li><a href="{{ article }}"></a></li>
+                    {% endfor %}
+                  </ul>
                   {% endif %}
 
                   <!-- Copyright details for your article -->

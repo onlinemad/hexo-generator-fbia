@@ -22,6 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "markdown-it": "^6.0.5",
+    "markdown-it-fb-figure": "0.0.1",
     "markdown-it-implicit-figures": "^0.3.2",
     "nunjucks": "^2.4.1",
     "object-assign": "^4.0.1"

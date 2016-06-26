@@ -31,6 +31,11 @@
               <meta charset="utf-8">
               <link rel="canonical" href="{{ (url + post.path) | uriencode }}">
               <meta property="op:markup_version" content="v1.0">
+
+              {% if config.fbia.use_automatic_ad_placement and post.fbia.ad | ad_enable %}
+              <meta property="fb:use_automatic_ad_placement" content="true">
+              {% endif %}
+
             </head>
             <body>
               <article>
@@ -66,6 +71,13 @@
                   {% if post.updated %}
                   <!-- The date and time when your article was last updated -->
                   <time class="op-modified" dateTime="{{ post.updated.toISOString() }}">{{ post.updated.toISOString() }}</time>
+                  {% endif %}
+
+                  {% if config.fbia.use_automatic_ad_placement and post.fbia.ad | ad_enable %}
+                  <!-- Ad to be automatically placed throughout the article -->
+                  <figure class="op-ad">
+                    <iframe width="300" height="250" style="border:0; margin:0;" src="https://www.facebook.com/adnw_request?placement={{ config.fbia.ad_placement.id }}&adtype={{ config.fbia.ad_placement.adtype }}"></iframe>
+                  </figure>
                   {% endif %}
 
                 </header>

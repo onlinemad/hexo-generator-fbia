@@ -36,6 +36,11 @@
               <meta property="fb:use_automatic_ad_placement" content="true">
               {% endif %}
 
+              {% if post.fbia.og %}
+              <meta property="og:title" content="{{ post.fbia.og.title }}">
+              <meta property="og:description" content="{{ post.fbia.og.description }}">
+              <meta property="og:image" content="{{ post.fbia.og.image }}">
+              {% endif %}
             </head>
             <body>
               <article>

@@ -25,3 +25,27 @@ fbia:
 
 - **limit** - Maximum number of posts in the feed (Use `0` or `false` to show all posts)
 - **path** - Feed path. (Default: fbia.xml)
+
+## Front-matter
+
+You can use Front-matter to add more feature of Facebook Instant Articles.
+
+``` yaml
+fbia:
+  og:
+    title:
+    description:
+    image:
+  header:
+    subtitle:
+    kicker:
+    img:
+    caption:
+  footer:
+    credits:
+    related_articles:
+    -
+    -
+    -
+  ad: false
+```

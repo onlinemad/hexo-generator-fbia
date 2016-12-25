@@ -21,7 +21,7 @@
   "author": "Ian Wu <onlinemad@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "markdown-it": "^6.0.5",
+    "markdown-it": "^8.2.2",
     "markdown-it-attrs": "^0.8.0",
     "markdown-it-fb-figure": "0.0.1",
     "markdown-it-implicit-figures": "^0.3.2",

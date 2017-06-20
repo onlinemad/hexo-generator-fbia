@@ -13,7 +13,11 @@
       <link>{{ (url + post.path) | uriencode }}</link>
       <guid isPermaLink="true">{{ (url + post.path) | uriencode }}</guid>
       <pubDate>{{ post.date.toISOString() }}</pubDate>
-      <author>{{ config.author }}</author>
+      {% if post.author %}
+        <author>{{ post.author }}</author>
+      {% else %}
+        <author>{{ config.author }}</author>
+      {% endif %}
       <description>
       {% if post.description %}
         {{ post.description }}

@@ -71,7 +71,11 @@
                   {% endif %}
 
                   <address>
-                    <a>{{ config.author }}</a>
+                    {% if post.author %}
+                      <a>{{ post.author }}</a>
+                    {% else %}
+                      <a>{{ config.author }}</a>
+                    {% endif %}
                   </address>
 
                   <!-- The date and time when your article was originally published -->

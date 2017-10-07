@@ -37,7 +37,13 @@
               <meta property="op:markup_version" content="v1.0">
 
               {% if config.fbia.use_automatic_ad_placement and post.fbia.ad | ad_enable %}
-              <meta property="fb:use_automatic_ad_placement" content="true">
+              <!-- Step #1 - Enable Automatic Ad Placement -->
+              <meta property="fb:use_automatic_ad_placement" content="enable=true ad_density=default">
+              {% endif %}
+
+              {% if config.fbia.op_recirculation_ads and post.fbia.ad | ad_enable %}
+              <!-- Step #2 - Enable Audience Network Recirc Ad -->
+              <meta property="fb:op-recirculation-ads" content="placement_id={{ config.fbia.ad_placement.recirculation_ads }}">
               {% endif %}
 
               {% if post.fbia.og %}
